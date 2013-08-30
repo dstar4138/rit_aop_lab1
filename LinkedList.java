@@ -7,6 +7,7 @@ import java.util.Iterator;
  * class).
  */
 public class LinkedList< E >
+        extends Observable
         implements Iterable< E > {
 
     /**
@@ -83,6 +84,7 @@ public class LinkedList< E >
         beginning.next.next.prev = beginning;
         beginning.next = beginning.next.next;
         size -= 1;
+        setUpdated();
     }
 
     /**
@@ -93,6 +95,7 @@ public class LinkedList< E >
         ending.prev.prev.next = ending;
         ending.prev = ending.prev.prev;
         size -= 1;
+        setUpdated();
     }
 
     /**
@@ -143,6 +146,7 @@ public class LinkedList< E >
         spot.prev.next = new_one;
         spot.prev = new_one;
         size += 1;
+        setUpdated();
     }
 
     /**
@@ -154,6 +158,7 @@ public class LinkedList< E >
         spot.prev.next = spot.next;
         spot.next.prev = spot.prev;
         size -= 1;
+        setUpdated();
     }
 
     /**
