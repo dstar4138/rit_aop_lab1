@@ -13,6 +13,12 @@ public class Observable {
         observers.add( o );
     }
 
+    public void deregister(Observer o){
+        if(observers != null){
+            observers.remove(o);
+        }
+    }
+
     public void setUpdated(){
         if( observers == null ) return;
 

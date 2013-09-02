@@ -8,7 +8,7 @@ class SortObserver< E extends Comparable< E > > implements Observer {
     @SuppressWarnings("unchecked")
     public void update( Observable observed ) {
         if( observed instanceof LinkedList ){
-            System.out.println( is_sorted((LinkedList<E>)observed) ? "Sorted" : "Not Sorted" );
+            System.out.println( is_sorted((LinkedList<E>)observed) ? "\tSorted" : "\tNot Sorted" );
         }
     }
 

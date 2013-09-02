@@ -13,6 +13,8 @@ public class TestList0 {
      */
     public static void main( String[] args ) {
         LinkedList< String > names = new LinkedList< String >();
+        names.register(new ListObserver<String>());
+        names.register(new SortObserver<String>());
         names.append( "James" );
         names.append( "Elias"  );
         names.append( "Heliotis" );
